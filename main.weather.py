@@ -28,7 +28,7 @@ class WeatherApp(QtWidgets.QWidget):
         self.but_gr.clicked.connect(self.get_gr_citys)
         self.but_nl.clicked.connect(self.get_nl_citys)
         
-    def get_weather_data(self):
+    def show_weather_data(self):
         #you need an api key to get data.take an api key from website
         self.API="fb3328815f2ebd7034f6b56edaaffcda"
         
@@ -49,8 +49,9 @@ class WeatherApp(QtWidgets.QWidget):
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             
-            print("temp : " , str(int(float(temp)-273.15)))
             #convert celcius
+            print("temp : " , str(int(float(temp)-273.15)))
+           
             print("description : " , description)
             print("pressure : " , pressure)
             print("country : " , country)
@@ -59,8 +60,8 @@ class WeatherApp(QtWidgets.QWidget):
         else:
             print("This country can not find, please enter correctly") 
 
-    def show_weather_data(self):
-        pass
+    '''def show_weather_data(self):
+        pass'''
     
     def get_tr_citys(self):
         pass
