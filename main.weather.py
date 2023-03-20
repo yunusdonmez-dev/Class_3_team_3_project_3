@@ -14,10 +14,19 @@ class WeatherApp(QtWidgets.QWidget):
         
         self.combo_country = QtWidgets.QComboBox()
         self.combo_city = QtWidgets.QComboBox()
-        self.search_button = QtWidgets.QPushButton('Search')
-        self.la_result = QtWidgets.QLabel('')
-        self.la_city_info=QtWidgets.QLabel('')
-        self.search_button.clicked.connect(self.show_weather_data)
+        
+        self.but_search = QtWidgets.QPushButton('Search')
+        self.but_tr = QtWidgets.QPushButton('TURKEY')
+        self.but_gr = QtWidgets.QPushButton('GERMANY')
+        self.but_nl = QtWidgets.QPushButton('NEDERLAND')
+        self.li_city=QtWidgets.QLineEdit('')
+        self.la_weather = QtWidgets.QLabel('')
+        self.table_city_info=QtWidgets.QTabWidget('')
+        self.la_total_city=QtWidgets.QLabel('')
+        self.but_search.clicked.connect(self.show_weather_data)
+        self.but_tr.clicked.connect(self.get_tr_citys)
+        self.but_gr.clicked.connect(self.get_gr_citys)
+        self.but_nl.clicked.connect(self.get_nl_citys)
         
     def get_weather_data(self):
         #you need an api key to get data.take an api key from website
@@ -51,6 +60,13 @@ class WeatherApp(QtWidgets.QWidget):
             print("This country can not find, please enter correctly") 
 
     def show_weather_data(self):
+        pass
+    
+    def get_tr_citys(self):
+        pass
+    def get_gr_citys(self):
+        pass
+    def get_nl_citys(self):
         pass
 
     
