@@ -48,14 +48,17 @@ class WeatherApp(QtWidgets.QWidget):
             description=get_data_JSON["weather"][0]["description"]
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
+            icon=get_data_JSON["weather"][0]["icon"]
             
             #convert celcius
             print("temp : " , str(int(float(temp)-273.15)))
            
             print("description : " , description)
+            
             print("pressure : " , pressure)
             print("country : " , country)
             print("city : " , self.CITY_NAME)
+            print("icon:",icon)
             
         else:
             print("This country can not find, please enter correctly") 
