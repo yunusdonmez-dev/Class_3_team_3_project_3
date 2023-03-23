@@ -11,7 +11,7 @@ class NewUsaSpider(scrapy.Spider):
       
         
         usa_row=response.xpath('//*[@id="mw-content-text"]/div[1]/table[5]/tbody').css("tr")
-        #city,region,population="row yok","row yok",0
+      
         for row in usa_row[1:]:
             # print(row)
             usa_list=row.css("td ::text").getall()
