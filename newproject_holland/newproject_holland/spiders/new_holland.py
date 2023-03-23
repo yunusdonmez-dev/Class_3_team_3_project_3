@@ -22,7 +22,7 @@ class NewHollandSpider(scrapy.Spider):
            
            
             yield{
-                "country" : "Netherland",
+                "country" : "Holland",
                 "region" :region, 
                 "city" : city,
                 "population" : population
