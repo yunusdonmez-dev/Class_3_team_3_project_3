@@ -18,8 +18,10 @@ class NewGermanySpider(scrapy.Spider):
           
             yield{
                 "country" : 'Germany',
-                "region" :region, 
+               
                 "city" : city,
-                "population":population
+                "population":population,
+                "region" :region,
+                
                 }
             
