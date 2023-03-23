@@ -21,7 +21,7 @@ class NewGermanySpider(scrapy.Spider):
                
                 "city" : city,
                 "population":population,
-                "region" :region,
+                "region" :region
                 
                 }
             
