@@ -38,4 +38,4 @@ class NewUsaSpider(scrapy.Spider):
                 
                 
                 
-            yield {"city":city,"population":population,"region":region}
+            yield {"country":"USA","city":city,"population":population,"region":region}
