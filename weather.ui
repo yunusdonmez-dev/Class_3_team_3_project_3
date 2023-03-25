@@ -52,7 +52,7 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;
      <string>NEDERLAND</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="but_tr">
+   <widget class="QPushButton" name="but_usa">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -67,7 +67,7 @@ background-color: rgb(255, 167, 140);
 font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>TURKEY</string>
+     <string>USA</string>
     </property>
    </widget>
    <widget class="QPushButton" name="but_gr">
@@ -88,7 +88,7 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>GERMANY</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="table_city_info">
+   <widget class="QTableWidget" name="table_cities">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -189,13 +189,85 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>      PLEASE ENTER CITY NAME</string>
     </property>
    </widget>
-   <widget class="QLabel" name="la_weather">
+   <widget class="QLabel" name="la_description">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>480</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 0, 127);
+background-color: rgb(255, 167, 140);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_temperature">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>440</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 0, 127);
+background-color: rgb(255, 167, 140);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_city">
     <property name="geometry">
      <rect>
       <x>520</x>
       <y>400</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 0, 127);
+background-color: rgb(255, 167, 140);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_country">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>360</y>
       <width>211</width>
-      <height>161</height>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 0, 127);
+background-color: rgb(255, 167, 140);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_region">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>400</y>
+      <width>111</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
