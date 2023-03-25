@@ -91,3 +91,10 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+ITEM_PIPELINES = {
+    'newproject_usa.pipelines.MongoDBPipeline': 300,
+}
+
+MONGO_URI = 'mongodb+srv://yunus:1234@cluster0.lytui3m.mongodb.net/?retryWrites=true&w=majority'
+MONGO_DATABASE = 'WeatherApp'
