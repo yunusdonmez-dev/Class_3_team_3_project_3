@@ -16,7 +16,7 @@ class WeatherApp(QtWidgets.QWidget):
         self.combo_city = QtWidgets.QComboBox()
         
         self.but_search = QtWidgets.QPushButton('Search')
-        self.but_tr = QtWidgets.QPushButton('TURKEY')
+        self.but_tr = QtWidgets.QPushButton('USA')
         self.but_gr = QtWidgets.QPushButton('GERMANY')
         self.but_nl = QtWidgets.QPushButton('NEDERLAND')
         self.li_city=QtWidgets.QLineEdit('')
