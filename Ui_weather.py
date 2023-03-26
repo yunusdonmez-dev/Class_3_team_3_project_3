@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\musab\OneDrive\Belgeler\GitHub\Class_3_team_3_project_3\weather.ui'
+# Form implementation generated from reading ui file 'c:\Users\admin\Documents\GitHub\Class_3_team_3_project_3\weather.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -97,7 +97,7 @@ class Ui_MainWindow(object):
         self.la_description.setText("")
         self.la_description.setObjectName("la_description")
         self.la_temperature = QtWidgets.QLabel(self.centralwidget)
-        self.la_temperature.setGeometry(QtCore.QRect(620, 440, 111, 41))
+        self.la_temperature.setGeometry(QtCore.QRect(520, 440, 211, 41))
         self.la_temperature.setStyleSheet("color: rgb(85, 0, 127);\n"
 "background-color: rgb(255, 167, 140);\n"
 "font: 75 10pt \"MS Shell Dlg 2\";")
@@ -124,16 +124,23 @@ class Ui_MainWindow(object):
 "font: 75 10pt \"MS Shell Dlg 2\";")
         self.la_region.setText("")
         self.la_region.setObjectName("la_region")
-        self.la_icon = QtWidgets.QLabel(self.centralwidget)
-        self.la_icon.setGeometry(QtCore.QRect(520, 440, 101, 41))
-        self.la_icon.setStyleSheet("color: rgb(85, 0, 127);\n"
+        self.la_population = QtWidgets.QLabel(self.centralwidget)
+        self.la_population.setGeometry(QtCore.QRect(520, 510, 211, 31))
+        self.la_population.setStyleSheet("color: rgb(85, 0, 127);\n"
 "background-color: rgb(255, 167, 140);\n"
 "font: 75 10pt \"MS Shell Dlg 2\";")
-        self.la_icon.setText("")
-        self.la_icon.setObjectName("la_icon")
+        self.la_population.setText("")
+        self.la_population.setObjectName("la_population")
+        self.la_pressure = QtWidgets.QLabel(self.centralwidget)
+        self.la_pressure.setGeometry(QtCore.QRect(520, 540, 211, 31))
+        self.la_pressure.setStyleSheet("color: rgb(85, 0, 127);\n"
+"background-color: rgb(255, 167, 140);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
+        self.la_pressure.setText("")
+        self.la_pressure.setObjectName("la_pressure")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
