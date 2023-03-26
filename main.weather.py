@@ -114,20 +114,22 @@ class Main_Window(QMainWindow, Ui_MainWindow):
          #get jason format
         get_data_JSON=get_data.json()
        
-        
+
         if (get_data_JSON["cod"] !="404"):
             #if you get 404,you can't get data
             temp=get_data_JSON["main"]["temp"]
+            temp = str(int(float(temp)-273.15))
             description=get_data_JSON["weather"][0]["description"]
-            pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
-            # icon=get_data_JSON["weather"][0]["icon"]
-            
+            icon_str=get_data_JSON["weather"][0]["icon"]
+            pixmap = QPixmap()
+            pixmap.loadFromData(b64decode(icon_str))
+            icon = QIcon(pixmap)
             self.weatherform.la_temperature.setText(str(temp)+"^C")
             self.weatherform.la_description.setText(description)
-            # self.weatherform.la_pressure.setText(pressure)
             self.weatherform.la_country.setText(country)
             self.weatherform.la_city.setText(self.city_name)
+            self.weatherform.la_icon.setPixmap(icon.pixmap(32))
     
     
     def get_usa_citys(self):
