@@ -69,7 +69,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
             
-            self.weatherform.la_temperature.setText(str(temp)+"^C")
+            self.weatherform.la_temperature.setText(str(temp)+"C°")
             self.weatherform.la_description.setText(description)
             self.weatherform.la_pressure.setText(pressure)
             self.weatherform.la_country.setText(country)
