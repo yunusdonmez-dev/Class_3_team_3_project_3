@@ -210,9 +210,9 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="la_temperature">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>620</x>
       <y>440</y>
-      <width>211</width>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -279,6 +279,24 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="la_icon">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>440</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 0, 127);
+background-color: rgb(255, 167, 140);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -286,7 +304,7 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
