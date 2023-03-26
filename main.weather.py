@@ -35,7 +35,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.city_holland=self.db["Netherland"]
         self.city_usa=self.db["USA"]
         self.weatherform.table_cities.cellClicked.connect(self.show_weather_data)
-        self.weatherform.but_search.clicked.connect(self.show_weather_data)
+        self.weatherform.but_search.clicked.connect(self.show_weather_data_2)
         self.weatherform.table_cities.itemSelectionChanged.connect(self.get_gr_citys)
         self.weatherform.table_cities.itemSelectionChanged.connect(self.get_nl_citys)
         self.weatherform.table_cities.itemSelectionChanged.connect(self.get_usa_citys)
@@ -67,40 +67,67 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             description=get_data_JSON["weather"][0]["description"]
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
-            icon=get_data_JSON["weather"][0]["icon"]
+            # icon=get_data_JSON["weather"][0]["icon"]
             
             self.weatherform.la_temperature.setText(str(temp)+"C°")
             self.weatherform.la_description.setText(description)
-            self.weatherform.la_pressure.setText(pressure)
+            # self.weatherform.la_pressure.setText(pressure)
             self.weatherform.la_country.setText(country)
             self.weatherform.la_city.setText(self.city_name)
             #insert mongodb
-            item={"country":self.weatherform.la_country.text(),
-                  "city_name":self.city_name,
-                  "temperature":temp,
-                  "description":description,
-                  "pressure":pressure,
+            # item={"country":self.weatherform.la_country.text(),
+            #       "city_name":self.city_name,
+            #       "temperature":temp,
+            #       "description":description,
+            #       "pressure":pressure,
                   
                 
-            }
-            try:
-                self.collection.insert_one(item)
-            except  pymongo.errors.WriteError as ERROR:
-                print("Error:",ERROR)    
+            # }
+            # try:
+            #     self.collection.insert_one(item)
+            # except  pymongo.errors.WriteError as ERROR:
+            #     print("Error:",ERROR)    
                  
             #convert celcius
-            print("temp : " , str(int(float(temp)-273.15)))
+            # print("temp : " , str(int(float(temp)-273.15)))
            
-            print("description : " , description)
+            # print("description : " , description)
             
-            print("pressure : " , pressure)
-            print("country : " , country)
-            print("city : " , self.city_name)
-            print("icon:",icon)
+            # print("pressure : " , pressure)
+            # print("country : " , country)
+            # print("city : " , self.city_name)
+            # print("icon:",icon)
             
         else:
             print("This country can not find, please enter correctly") 
 
+    def show_weather_data_2(self):
+        '''
+        Show data when the ssearch button clicked
+        '''
+        self.API="fb3328815f2ebd7034f6b56edaaffcda"
+        self.BASE_URL="https://api.openweathermap.org/data/2.5/weather?"
+        self.city_name=self.weatherform.li_city.text()
+        self.URL=self.BASE_URL + "appid=" + self.API + "&q=" +self.city_name
+         #get data with requests
+        get_data=requests.get(self.URL)
+         #get jason format
+        get_data_JSON=get_data.json()
+       
+        
+        if (get_data_JSON["cod"] !="404"):
+            #if you get 404,you can't get data
+            temp=get_data_JSON["main"]["temp"]
+            description=get_data_JSON["weather"][0]["description"]
+            pressure=get_data_JSON["main"]["pressure"]
+            country=get_data_JSON["sys"]["country"]
+            # icon=get_data_JSON["weather"][0]["icon"]
+            
+            self.weatherform.la_temperature.setText(str(temp)+"^C")
+            self.weatherform.la_description.setText(description)
+            # self.weatherform.la_pressure.setText(pressure)
+            self.weatherform.la_country.setText(country)
+            self.weatherform.la_city.setText(self.city_name)
     
     
     def get_usa_citys(self):
@@ -147,44 +174,44 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(i["population"]))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(str(i["region"])))
             row +=1 
-    def city_info_nl(self):
-        selected_nl=self.weatherform.table_cities.selectedItems()
-        if len (selected_nl)==0:
-            return
-        selected_city=selected_nl[0].text()
-        x={"country":"Netherland","city":selected_city}
-        nl_info=self.city_holland.find_one(x)
-        if not nl_info:
-            return
-        self.weatherform.la_country.setText("Netherland")
-        #self.weatherform.la_population.settext(str(nl_info["population"]))
-        self.weatherform.la_region.setText(nl_info("region"))
+    # def city_info_nl(self):
+    #     selected_nl=self.weatherform.table_cities.selectedItems()
+    #     if len (selected_nl)==0:
+    #         return
+    #     selected_city=selected_nl[0].text()
+    #     x={"country":"Netherland","city":selected_city}
+    #     nl_info=self.city_holland.find_one(x)
+    #     if not nl_info:
+    #         return
+    #     self.weatherform.la_country.setText("Netherland")
+    #     #self.weatherform.la_population.settext(str(nl_info["population"]))
+    #     self.weatherform.la_region.setText(nl_info("region"))
         
-    def city_info_gr(self):
-        selected_gr=self.weatherform.table_cities.selectedItems()
-        if len (selected_gr)==0:
-            return
-        selected_city=selected_gr[0].text()
-        x={"country":"Germany","city":selected_city}
-        gr_info=self.city_germany.find_one(x)
-        if not gr_info:
-            return
-        self.weatherform.la_country.setText("Germany")
-        #self.weatherform.la_population.setText(str(gr_info["population"]))
-        self.weatherform.la_region.setText(gr_info("region"))
+    # def city_info_gr(self):
+    #     selected_gr=self.weatherform.table_cities.selectedItems()
+    #     if len (selected_gr)==0:
+    #         return
+    #     selected_city=selected_gr[0].text()
+    #     x={"country":"Germany","city":selected_city}
+    #     gr_info=self.city_germany.find_one(x)
+    #     if not gr_info:
+    #         return
+    #     self.weatherform.la_country.setText("Germany")
+    #     #self.weatherform.la_population.setText(str(gr_info["population"]))
+    #     self.weatherform.la_region.setText(gr_info("region"))
         
-    def city_info_usa(self):
-        selected_usa=self.weatherform.table_cities.selectedItems()
-        if len (selected_usa)==0:
-            return
-        selected_city=selected_usa[0].text()
-        x={"country":"Usa","city":selected_city}
-        usa_info=self.city_usa.find_one(x)
-        if not usa_info:
-            return
-        self.weatherform.la_country.setText("Usa")
-       # self.weatherform.la_population.settext(str(usa_info["population"]))
-        self.weatherform.la_region.setText(usa_info("region"))
+    # def city_info_usa(self):
+    #     selected_usa=self.weatherform.table_cities.selectedItems()
+    #     if len (selected_usa)==0:
+    #         return
+    #     selected_city=selected_usa[0].text()
+    #     x={"country":"Usa","city":selected_city}
+    #     usa_info=self.city_usa.find_one(x)
+    #     if not usa_info:
+    #         return
+    #     self.weatherform.la_country.setText("Usa")
+    #    # self.weatherform.la_population.settext(str(usa_info["population"]))
+    #     self.weatherform.la_region.setText(usa_info("region"))
         
             
                   
