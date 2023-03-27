@@ -33,6 +33,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         column_current=self.weatherform.table_cities.currentColumn()
         self.city_name=self.weatherform.table_cities.item(row_current,column_current).text()
         self.population = self.weatherform.table_cities.item(row_current,column_current+1).text()
+        self.region = self.weatherform.table_cities.item(row_current,column_current+2).text()
         
        
         #you need an api key to get data.take an api key from website
@@ -62,6 +63,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.la_country.setText(country)
             self.weatherform.la_city.setText(self.city_name)
             self.weatherform.la_population.setText(self.population)
+            self.weatherform.la_region.setText(self.region)
             
         else:
             print("This country can not find, please enter correctly") 
@@ -107,6 +109,18 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 pass
             try:
                 self.weatherform.la_population.setText(str(self.db.USA.find_one({"city":f"{self.city_name}"})['population']))
+            except:
+                pass
+            try:
+                self.weatherform.la_region.setText(str(self.db.Germany.find_one({"city":f"{self.city_name}"})['region']))
+            except:
+                pass
+            try:
+                self.weatherform.la_region.setText(str(self.db.Netherland.find_one({"city":f"{self.city_name}"})['region']))
+            except:
+                pass
+            try:
+                self.weatherform.la_region.setText(str(self.db.USA.find_one({"city":f"{self.city_name}"})['region']))
             except:
                 pass
     
