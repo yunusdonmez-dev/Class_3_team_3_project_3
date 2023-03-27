@@ -2,24 +2,15 @@
 
 Infotech data science course - Project-3
 
-We wrote a program where we design the interface with pyqt5, get the instant weather conditions with the api, and get the information of the selected city with scrapy and save it to mongo db.
+We have developed a program using Python, where we designed the interface using PyQt5, fetched real-time weather information using an API, and used Scrapy to scrape information about the selected city and store it in a MongoDB database.
 
-We wrote this program in python.
+We also retrieved information about states, regions, and populations of Holland, America, and Germany from Wikipedia and stored them in tables in MongoDB.
 
-We got the state, region and population information in the Netherlands, America and Germany from wikipedia.
+When the program is run, it first displays a list of registered cities in a table widget.
+Then, when we select a city from the sorted list, we fetch the real-time weather information using an API and display it on our interface along with a background image that matches the current weather condition.
 
-We kept this information in the tables which we created with mongo db.
+Furthermore, the user can also search for a city by typing its name. They can type the name of the city, click on the search button, and run the program to retrieve the weather information for that city.
 
-User can selected a country and city.
+We worked collaboratively with our team members using GitHub to synchronize our work.
 
-When the program was run, it first listed the registered cities as a list on a table widget.
-
-Then we chose one of the cities listed.
-
-According to this selection, we got the instant weather information using the API.
-
-We saw the instant weather in our interface with a background picture suitable for the weather.
-
-We completed our program by working in sync with our teammates over git hub.
-
-We did the work department planning and task distribution using trello.
+We used Trello to plan and distribute tasks among our team members.
