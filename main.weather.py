@@ -13,6 +13,12 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         super(Main_Window,self).__init__()
         self.weatherform=Ui_MainWindow()
         self.weatherform.setupUi(self)
+
+        self.background_label = QLabel(self)
+        self.background_label.setGeometry(0, 0, self.width(), self.height())
+
+        self.set_background('BackgroundImages\Telefon Duvar Kağıdı, Background Tasarımı.jpg')
+        self.background_label.lower()
     
         self.client=pymongo.MongoClient('mongodb+srv://yunus:1234@cluster0.lytui3m.mongodb.net/?retryWrites=true&w=majority')
         self.db=self.client["WeatherApp"]
@@ -26,6 +32,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.weatherform.but_usa.clicked.connect(self.get_usa_citys)
         self.weatherform.but_gr.clicked.connect(self.get_gr_citys)
         self.weatherform.but_nl.clicked.connect(self.get_nl_citys)
+    
+    def set_background(self, path):
+        self.background_label.setPixmap(QPixmap(path))
+        self.background_label.setGeometry(0, 0, self.width(), self.height())
         
     def show_weather_data(self,row,column):
         row_current= self.weatherform.table_cities.currentRow()
@@ -51,6 +61,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             #if you get 404,you can't get data
             temp=get_data_JSON["main"]["temp"]
             description=get_data_JSON["weather"][0]["description"]
+            if description == "clear sky":
+                self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
+            elif description == "mist":
+                self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
@@ -89,6 +103,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             #if you get 404,you can't get data
             temp=get_data_JSON["main"]["temp"]
             description=get_data_JSON["weather"][0]["description"]
+            if description == "clear sky":
+                self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
+            elif description == "mist":
+                self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
