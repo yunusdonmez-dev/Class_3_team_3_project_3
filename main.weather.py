@@ -148,7 +148,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.weatherform.table_cities.setRowCount(len(rows_info))
         for i in rows_info:
             self.weatherform.table_cities.setItem(row, 0, QtWidgets.QTableWidgetItem(i["city"]))
-            self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(i["population"]))
+            self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1   
             
