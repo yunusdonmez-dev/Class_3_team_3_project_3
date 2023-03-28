@@ -46,6 +46,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     def set_background(self, path):
         self.background_label.setPixmap(QPixmap(path))
         self.background_label.setGeometry(0, 0, self.width(), self.height())
+             
         
     def show_weather_data(self):
         try:
@@ -339,6 +340,8 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1 
+   
+        
 
 if __name__ == "__main__":
         app = QApplication(sys.argv)

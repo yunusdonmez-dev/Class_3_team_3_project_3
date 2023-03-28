@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\musab\OneDrive\Belgeler\GitHub\Class_3_team_3_project_3\weather.ui'
+# Form implementation generated from reading ui file 'c:\Users\admin\Documents\GitHub\Class_3_team_3_project_3\weather.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -195,9 +195,24 @@ class Ui_MainWindow(object):
         self.la_icon.setGeometry(QtCore.QRect(210, 250, 91, 91))
         self.la_icon.setText("")
         self.la_icon.setObjectName("la_icon")
+        self.but_exit = QtWidgets.QPushButton(self.centralwidget)
+        self.but_exit.setGeometry(QtCore.QRect(620, 470, 101, 51))
+        self.but_exit.setStyleSheet("color: rgb(0, 0, 138);\n"
+"background-color: rgb(255, 255, 255, 128);\n"
+"font: 75 9pt \"MS Shell Dlg 2\";\n"
+"border-radius: 10px;\n"
+"")
+        self.but_exit.setObjectName("but_exit")
+        self.la_total = QtWidgets.QLabel(self.centralwidget)
+        self.la_total.setGeometry(QtCore.QRect(180, 780, 381, 31))
+        self.la_total.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(0, 0, 138);\n"
+"")
+        self.la_total.setObjectName("la_total")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -205,6 +220,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.but_exit.clicked.connect(MainWindow.close)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -224,3 +240,5 @@ class Ui_MainWindow(object):
         self.la_pressure_lbl.setText(_translate("MainWindow", "Pressure(N/m2):"))
         self.la_population_lbl.setText(_translate("MainWindow", "Population:"))
         self.la_time.setText(_translate("MainWindow", "Local Time :"))
+        self.but_exit.setText(_translate("MainWindow", "EXIT"))
+        self.la_total.setText(_translate("MainWindow", "TOTAL CITIES:"))

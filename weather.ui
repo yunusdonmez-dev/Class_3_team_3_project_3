@@ -465,6 +465,45 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="but_exit">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>470</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 138);
+background-color: rgb(255, 255, 255, 128);
+font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>EXIT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_total">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>780</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255, 10);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 138);
+</string>
+    </property>
+    <property name="text">
+     <string>TOTAL CITIES:</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -472,12 +511,29 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>but_exit</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>664</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>667</x>
+     <y>609</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
