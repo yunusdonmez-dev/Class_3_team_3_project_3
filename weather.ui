@@ -92,12 +92,13 @@ border-radius: 10px;
      <rect>
       <x>180</x>
       <y>470</y>
-      <width>531</width>
+      <width>381</width>
       <height>311</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">alternate-background-color: rgb(255, 255, 255, 10);</string>
+     <string notr="true">background-color: transparent;
+</string>
     </property>
     <property name="showGrid">
      <bool>false</bool>
@@ -396,6 +397,42 @@ color: rgb(0, 0, 138);
      <string>Population:</string>
     </property>
    </widget>
+   <widget class="QLabel" name="la_time">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255, 10);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 138);</string>
+    </property>
+    <property name="text">
+     <string>Local Time :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>10</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255, 10);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 0, 138);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -403,7 +440,7 @@ color: rgb(0, 0, 138);
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

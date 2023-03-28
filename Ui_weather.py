@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\musab\OneDrive\Belgeler\GitHub\Class_3_team_3_project_3\weather.ui'
+# Form implementation generated from reading ui file 'c:\Users\yunus\OneDrive\Desktop\ATM-PROJECKT-2-TEAM-2-main\Class_3_team_3_project_3\weather.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -45,8 +45,9 @@ class Ui_MainWindow(object):
 "")
         self.but_gr.setObjectName("but_gr")
         self.table_cities = QtWidgets.QTableWidget(self.centralwidget)
-        self.table_cities.setGeometry(QtCore.QRect(180, 470, 531, 311))
-        self.table_cities.setStyleSheet("alternate-background-color: rgb(255, 255, 255, 10);")
+        self.table_cities.setGeometry(QtCore.QRect(180, 470, 381, 311))
+        self.table_cities.setStyleSheet("background-color: transparent;\n"
+"")
         self.table_cities.setShowGrid(False)
         self.table_cities.setGridStyle(QtCore.Qt.SolidLine)
         self.table_cities.setObjectName("table_cities")
@@ -169,9 +170,22 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 138);\n"
 "")
         self.la_population_lbl.setObjectName("la_population_lbl")
+        self.la_time = QtWidgets.QLabel(self.centralwidget)
+        self.la_time.setGeometry(QtCore.QRect(590, 10, 71, 21))
+        self.la_time.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(0, 0, 138);")
+        self.la_time.setObjectName("la_time")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(670, 10, 111, 21))
+        self.label.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(0, 0, 138);")
+        self.label.setText("")
+        self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -197,3 +211,4 @@ class Ui_MainWindow(object):
         self.but_search.setText(_translate("MainWindow", "SEARCH WEATHER"))
         self.la_pressure_lbl.setText(_translate("MainWindow", "Pressure(N/m2):"))
         self.la_population_lbl.setText(_translate("MainWindow", "Population:"))
+        self.la_time.setText(_translate("MainWindow", "Local Time :"))
