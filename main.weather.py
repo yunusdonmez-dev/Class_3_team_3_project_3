@@ -34,12 +34,12 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.city_holland=self.db["Netherland"]
         self.city_usa=self.db["USA"]
         self.show_weather_data_3()
-        self.weatherform.table_cities.cellClicked.connect(self.show_weather_data)
-        self.weatherform.but_search.clicked.connect(self.show_weather_data_2)
+        self.weatherform.table_cities.cellClicked.connect(self.show_weather_data)  #to click cell(cities) on QTableWidget 
+        self.weatherform.but_search.clicked.connect(self.show_weather_data_2)      
         
  
         self.get_nl_citys()             #Default Country
-        self.weatherform.but_usa.clicked.connect(self.get_usa_citys)
+        self.weatherform.but_usa.clicked.connect(self.get_usa_citys)  
         self.weatherform.but_gr.clicked.connect(self.get_gr_citys)
         self.weatherform.but_nl.clicked.connect(self.get_nl_citys)
     
@@ -87,7 +87,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 local_time = datetime.now(timezone)
                 self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
                 
-                self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
+                self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°") #write the informations to the labels
                 self.weatherform.la_description.setText(description)
                 self.weatherform.la_pressure.setText(str(pressure))
                 self.weatherform.la_country.setText(country)
@@ -121,7 +121,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             #if you get 404,you can't get data
             temp=get_data_JSON["main"]["temp"]
             description=get_data_JSON["weather"][0]["description"]
-            if description == "clear sky":
+            if description == "clear sky":                                        #Backround change to change as the Weather changes
                 self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
             elif description == "mist":
                 self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
@@ -234,7 +234,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             except:
                 pass
     
-    def get_usa_citys(self):
+    def get_usa_citys(self):   # to get the usa cities, region of the cities and the population to the tablewidget
         info_cities=self.city_usa.find({"country":"USA"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -247,7 +247,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1   
-    def get_gr_citys(self):
+    def get_gr_citys(self):                              # to get the Germany cities, region of the cities and the population to the tablewidget 
         info_cities=self.city_germany.find({"country":"Germany"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -263,7 +263,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             row +=1   
             
             
-    def get_nl_citys(self):
+    def get_nl_citys(self):       # to get the NL cities, region of the cities and the population to the tablewidget
         info_cities=self.city_holland.find({"country":"Holland"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
