@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="but_nl">
     <property name="geometry">
@@ -37,9 +40,10 @@
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 128);
-font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(66, 145, 158, 180);
+font: 87 10pt &quot;Segoe UI Black&quot;;
 border-radius: 10px;
+
 
 </string>
     </property>
@@ -58,8 +62,8 @@ border-radius: 10px;
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 128);
-font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(66, 145, 158, 180);
+font: 87 10pt &quot;Segoe UI Black&quot;;
 border-radius: 10px;
 </string>
     </property>
@@ -78,8 +82,8 @@ border-radius: 10px;
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 128);
-font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(66, 145, 158, 180);
+font: 87 10pt &quot;Segoe UI Black&quot;;
 border-radius: 10px;
 </string>
     </property>
@@ -92,7 +96,7 @@ border-radius: 10px;
      <rect>
       <x>180</x>
       <y>470</y>
-      <width>381</width>
+      <width>591</width>
       <height>311</height>
      </rect>
     </property>
@@ -148,17 +152,17 @@ border-radius: 10px;
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>260</y>
+      <y>320</y>
       <width>221</width>
       <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 128);
+background-color: rgb(255, 255, 255, 180);
 font: 75 9pt &quot;MS Shell Dlg 2&quot;;
 border-radius: 10px;
-</string>
+border: 2px solid rgb(66, 145, 158);</string>
     </property>
     <property name="text">
      <string/>
@@ -180,15 +184,15 @@ border-radius: 10px;
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>340</y>
+      <y>400</y>
       <width>221</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 128);
-font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(66, 145, 158, 180);
+font: 87 10pt &quot;Segoe UI Black&quot;;
 border-radius: 10px;
 </string>
     </property>
@@ -320,26 +324,8 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="la_population">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>390</y>
-      <width>171</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 10);
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="la_pressure">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>320</y>
+      <x>330</x>
+      <y>380</y>
       <width>171</width>
       <height>71</height>
      </rect>
@@ -347,27 +333,48 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
 background-color: rgb(255, 255, 255, 10);
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 87 10pt &quot;Segoe UI Black&quot;;</string>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_pressure">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>320</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 138);
+background-color: rgb(255, 255, 255, 10);
+font: 87 10pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="la_pressure_lbl">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>280</x>
       <y>320</y>
-      <width>151</width>
+      <width>171</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255, 10);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+font: 87 10pt &quot;Segoe UI Black&quot;;
 color: rgb(0, 0, 138);
 
 </string>
@@ -382,7 +389,7 @@ color: rgb(0, 0, 138);
    <widget class="QLabel" name="la_population_lbl">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>280</x>
       <y>380</y>
       <width>131</width>
       <height>71</height>
@@ -390,7 +397,7 @@ color: rgb(0, 0, 138);
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255, 10);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+font: 87 10pt &quot;Segoe UI Black&quot;;
 color: rgb(0, 0, 138);
 </string>
     </property>
@@ -455,29 +462,35 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="la_icon">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>250</y>
-      <width>91</width>
-      <height>91</height>
+      <x>620</x>
+      <y>160</y>
+      <width>131</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+    </property>
    </widget>
    <widget class="QPushButton" name="but_exit">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>470</y>
+      <x>670</x>
+      <y>790</y>
       <width>101</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 138);
-background-color: rgb(255, 255, 255, 128);
-font: 75 9pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(66, 145, 158, 180);
+font: 87 10pt &quot;Segoe UI Black&quot;;
 border-radius: 10px;
 </string>
     </property>
@@ -511,7 +524,7 @@ color: rgb(0, 0, 138);
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -8,7 +8,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from Ui_weather import *
 import pytz     # pip install pytz
-from datetime import datetime
+import datetime
 from geopy.geocoders import Nominatim  # pip install geopy
 from timezonefinder import TimezoneFinder #pip install timezonefinder
 import urllib
@@ -25,7 +25,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         #To arrange background image
         self.background_label = QLabel(self)
         self.background_label.setGeometry(0, 0, self.width(), self.height())
-        self.set_background('BackgroundImages\Telefon Duvar Kağıdı, Background Tasarımı.jpg')
+        self.set_background("BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg")
         self.background_label.lower()
     
         self.client=pymongo.MongoClient('mongodb+srv://yunus:1234@cluster0.lytui3m.mongodb.net/?retryWrites=true&w=majority')
@@ -35,7 +35,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.city_usa=self.db["USA"]
         self.show_weather_data_3()
         self.weatherform.table_cities.cellClicked.connect(self.show_weather_data)  #to click cell(cities) on QTableWidget 
-        self.weatherform.but_search.clicked.connect(self.show_weather_data_2)      
+        self.weatherform.but_search.clicked.connect(self.show_weather_data_2)    
         
  
         self.get_nl_citys()             #Default Country
@@ -73,22 +73,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 #if you get 404,you can't get data
                 temp=get_data_JSON["main"]["temp"]
                 description=get_data_JSON["weather"][0]["description"]
-                if description == "clear sky":
-                    self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
-                elif description == "mist":
-                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
+                
                 pressure=get_data_JSON["main"]["pressure"]
                 country=get_data_JSON["sys"]["country"]
                 icon=get_data_JSON["weather"][0]["icon"]
@@ -102,8 +87,44 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 obj = TimezoneFinder()
                 result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
                 timezone = pytz.timezone(result)  # replace with the timezone of the city
-                local_time = datetime.now(timezone)
-                self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
+                self.local_time = datetime.datetime.now(timezone)
+                specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
+                self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
+
+                if self.local_time.time() >= specific_time:
+                    if description == "clear sky":
+                        self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
+                    elif description == "mist":
+                        self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                    elif description == "":
+                            pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                else:
+                    if description == "clear sky":
+                        self.set_background('BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg')
+                    elif description == "mist":
+                        self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                    elif description == "":
+                            pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
+                    elif description == "":
+                        pass
                 
                 self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°") #write the informations to the labels
                 self.weatherform.la_description.setText(description)
@@ -145,22 +166,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             #if you get 404,you can't get data
             temp=get_data_JSON["main"]["temp"]
             description=get_data_JSON["weather"][0]["description"]
-            if description == "clear sky":                                        #Backround change to change as the Weather changes
-                self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
-            elif description == "mist":
-                self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-            elif description == "":
-                    pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
+            
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
@@ -174,8 +180,44 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             obj = TimezoneFinder()
             result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
             timezone = pytz.timezone(result)  # replace with the timezone of the city
-            local_time = datetime.now(timezone)
-            self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
+            self.local_time = datetime.datetime.now(timezone)
+            specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
+            self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
+
+            if self.local_time.time() >= specific_time:
+                if description == "clear sky":
+                    self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
+                elif description == "mist":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "broken clouds":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+            else:
+                if description == "clear sky":
+                    self.set_background('BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg')
+                elif description == "mist":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "broken clouds":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
             
             self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
             self.weatherform.la_description.setText(description)
@@ -234,22 +276,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             #if you get 404,you can't get data
             temp=get_data_JSON["main"]["temp"]
             description=get_data_JSON["weather"][0]["description"]
-            if description == "clear sky":
-                self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
-            elif description == "mist":
-                self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-            elif description == "":
-                    pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
-            elif description == "":
-                pass
+
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
@@ -263,9 +290,45 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             obj = TimezoneFinder()
             result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
             timezone = pytz.timezone(result)  # replace with the timezone of the city
-            local_time = datetime.now(timezone)
-            self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
-            # print(f"Current time in {self.city_name}: {local_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            self.local_time = datetime.datetime.now(timezone)
+            specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
+            self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
+            # print(f"Current time in {self.city_name}: {self.local_time.strftime('%Y-%m-%d %H:%M:%S')}")
+        
+            if self.local_time.time() >= specific_time:
+                if description == "clear sky":
+                    self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
+                elif description == "mist":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "":
+                        pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+            else:
+                if description == "clear sky":
+                    self.set_background('BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg')
+                elif description == "mist":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "":
+                        pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
             
             self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
             self.weatherform.la_description.setText(description)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\admin\Documents\GitHub\Class_3_team_3_project_3\weather.ui'
+# Form implementation generated from reading ui file 'c:\Users\musab\OneDrive\Belgeler\GitHub\Class_3_team_3_project_3\weather.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -17,35 +17,37 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 900)
         MainWindow.setMinimumSize(QtCore.QSize(800, 900))
         MainWindow.setMaximumSize(QtCore.QSize(800, 900))
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.but_nl = QtWidgets.QPushButton(self.centralwidget)
         self.but_nl.setGeometry(QtCore.QRect(29, 470, 121, 91))
         self.but_nl.setStyleSheet("color: rgb(0, 0, 138);\n"
-"background-color: rgb(255, 255, 255, 128);\n"
-"font: 75 9pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(66, 145, 158, 180);\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "border-radius: 10px;\n"
+"\n"
 "\n"
 "")
         self.but_nl.setObjectName("but_nl")
         self.but_usa = QtWidgets.QPushButton(self.centralwidget)
         self.but_usa.setGeometry(QtCore.QRect(30, 690, 121, 91))
         self.but_usa.setStyleSheet("color: rgb(0, 0, 138);\n"
-"background-color: rgb(255, 255, 255, 128);\n"
-"font: 75 9pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(66, 145, 158, 180);\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "border-radius: 10px;\n"
 "")
         self.but_usa.setObjectName("but_usa")
         self.but_gr = QtWidgets.QPushButton(self.centralwidget)
         self.but_gr.setGeometry(QtCore.QRect(30, 580, 121, 91))
         self.but_gr.setStyleSheet("color: rgb(0, 0, 138);\n"
-"background-color: rgb(255, 255, 255, 128);\n"
-"font: 75 9pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(66, 145, 158, 180);\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "border-radius: 10px;\n"
 "")
         self.but_gr.setObjectName("but_gr")
         self.table_cities = QtWidgets.QTableWidget(self.centralwidget)
-        self.table_cities.setGeometry(QtCore.QRect(180, 470, 381, 311))
+        self.table_cities.setGeometry(QtCore.QRect(180, 470, 591, 311))
         self.table_cities.setStyleSheet("background-color: transparent;\n"
 "")
         self.table_cities.setShowGrid(False)
@@ -76,22 +78,22 @@ class Ui_MainWindow(object):
         item.setFont(font)
         self.table_cities.setHorizontalHeaderItem(2, item)
         self.li_city = QtWidgets.QLineEdit(self.centralwidget)
-        self.li_city.setGeometry(QtCore.QRect(550, 260, 221, 61))
+        self.li_city.setGeometry(QtCore.QRect(550, 320, 221, 61))
         self.li_city.setStyleSheet("color: rgb(0, 0, 138);\n"
-"background-color: rgb(255, 255, 255, 128);\n"
+"background-color: rgb(255, 255, 255, 180);\n"
 "font: 75 9pt \"MS Shell Dlg 2\";\n"
 "border-radius: 10px;\n"
-"")
+"border: 2px solid rgb(66, 145, 158);")
         self.li_city.setText("")
         self.li_city.setFrame(False)
         self.li_city.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.li_city.setAlignment(QtCore.Qt.AlignCenter)
         self.li_city.setObjectName("li_city")
         self.but_search = QtWidgets.QPushButton(self.centralwidget)
-        self.but_search.setGeometry(QtCore.QRect(550, 340, 221, 51))
+        self.but_search.setGeometry(QtCore.QRect(550, 400, 221, 51))
         self.but_search.setStyleSheet("color: rgb(0, 0, 138);\n"
-"background-color: rgb(255, 255, 255, 128);\n"
-"font: 75 9pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(66, 145, 158, 180);\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "border-radius: 10px;\n"
 "")
         self.but_search.setObjectName("but_search")
@@ -141,33 +143,34 @@ class Ui_MainWindow(object):
         self.la_region.setScaledContents(False)
         self.la_region.setObjectName("la_region")
         self.la_population = QtWidgets.QLabel(self.centralwidget)
-        self.la_population.setGeometry(QtCore.QRect(360, 390, 171, 61))
+        self.la_population.setGeometry(QtCore.QRect(330, 380, 171, 71))
         self.la_population.setStyleSheet("color: rgb(0, 0, 138);\n"
 "background-color: rgb(255, 255, 255, 10);\n"
-"font: 75 8pt \"MS Shell Dlg 2\";")
+"font: 87 10pt \"Segoe UI Black\";")
         self.la_population.setText("")
+        self.la_population.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.la_population.setObjectName("la_population")
         self.la_pressure = QtWidgets.QLabel(self.centralwidget)
-        self.la_pressure.setGeometry(QtCore.QRect(320, 320, 171, 71))
+        self.la_pressure.setGeometry(QtCore.QRect(430, 320, 71, 71))
         self.la_pressure.setStyleSheet("color: rgb(0, 0, 138);\n"
 "background-color: rgb(255, 255, 255, 10);\n"
-"font: 75 8pt \"MS Shell Dlg 2\";")
+"font: 87 10pt \"Segoe UI Black\";")
         self.la_pressure.setText("")
-        self.la_pressure.setAlignment(QtCore.Qt.AlignCenter)
+        self.la_pressure.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.la_pressure.setObjectName("la_pressure")
         self.la_pressure_lbl = QtWidgets.QLabel(self.centralwidget)
-        self.la_pressure_lbl.setGeometry(QtCore.QRect(220, 320, 151, 71))
+        self.la_pressure_lbl.setGeometry(QtCore.QRect(280, 320, 171, 71))
         self.la_pressure_lbl.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "color: rgb(0, 0, 138);\n"
 "\n"
 "")
         self.la_pressure_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.la_pressure_lbl.setObjectName("la_pressure_lbl")
         self.la_population_lbl = QtWidgets.QLabel(self.centralwidget)
-        self.la_population_lbl.setGeometry(QtCore.QRect(220, 380, 131, 71))
+        self.la_population_lbl.setGeometry(QtCore.QRect(280, 380, 131, 71))
         self.la_population_lbl.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "color: rgb(0, 0, 138);\n"
 "")
         self.la_population_lbl.setObjectName("la_population_lbl")
@@ -192,14 +195,16 @@ class Ui_MainWindow(object):
         self.la_hata.setText("")
         self.la_hata.setObjectName("la_hata")
         self.la_icon = QtWidgets.QLabel(self.centralwidget)
-        self.la_icon.setGeometry(QtCore.QRect(210, 250, 91, 91))
+        self.la_icon.setGeometry(QtCore.QRect(620, 160, 131, 121))
         self.la_icon.setText("")
+        self.la_icon.setScaledContents(True)
+        self.la_icon.setAlignment(QtCore.Qt.AlignJustify|QtCore.Qt.AlignVCenter)
         self.la_icon.setObjectName("la_icon")
         self.but_exit = QtWidgets.QPushButton(self.centralwidget)
-        self.but_exit.setGeometry(QtCore.QRect(620, 470, 101, 51))
+        self.but_exit.setGeometry(QtCore.QRect(670, 790, 101, 51))
         self.but_exit.setStyleSheet("color: rgb(0, 0, 138);\n"
-"background-color: rgb(255, 255, 255, 128);\n"
-"font: 75 9pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(66, 145, 158, 180);\n"
+"font: 87 10pt \"Segoe UI Black\";\n"
 "border-radius: 10px;\n"
 "")
         self.but_exit.setObjectName("but_exit")
@@ -212,7 +217,7 @@ class Ui_MainWindow(object):
         self.la_total.setObjectName("la_total")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
