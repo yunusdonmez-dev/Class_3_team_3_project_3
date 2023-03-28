@@ -2,6 +2,8 @@
 
 Infotech data science course - Project-3
 
+WeatherApp
+
 We have developed a program using Python, where we designed the interface using PyQt5, fetched real-time weather information using an API, and used Scrapy to scrape information about the selected city and store it in a MongoDB database.
 
 We also retrieved information about states, regions, and populations of Holland, America, and Germany from Wikipedia and stored them in tables in MongoDB.
