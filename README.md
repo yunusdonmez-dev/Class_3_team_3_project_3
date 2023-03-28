@@ -16,6 +16,12 @@ To install the project, follow these steps:
 
 4.Clone the project from GitHub.
 
+![github-logo-vector](https://user-images.githubusercontent.com/119568441/228377145-9a278f2c-c198-4063-b41a-c6d4dc673e52.png)
+
+![github-logo-vector](https://user-images.githubusercontent.com/119568441/228377186-c5acfdd8-36c3-4da4-81cc-e6ee6f6ec6f1.png)
+
+![github-logo-vector](https://user-images.githubusercontent.com/119568441/228377232-53eeaa70-ab7b-47c6-a083-bd7ac08c84ea.png)
+
 
 
 
@@ -30,6 +36,13 @@ search for a city by typing its name in the search bar and clicking the search b
 3.The program will fetch the real-time weather information using an API and 
 display it on the interface along with a background image that matches the current weather 
 condition.
+
+
+![case_diagram](https://user-images.githubusercontent.com/119568441/228377457-ff2e1e20-04a1-4ae6-9573-43f944d32b94.png)
+
+
+
+
 
            Project Structure
 
@@ -56,3 +69,7 @@ We used Trello to plan and distribute tasks among our team members.
 We created daily task boards on Trello and assigned tasks to team members, and 
 used the platform to track progress and ensure that we met our project deadlines.
 We also held daily Zoom meetings to discuss progress, ask questions, and plan next steps.
+
+![TRELLO](https://user-images.githubusercontent.com/119568441/228377645-9d422dad-063d-43d6-86ec-5e7e2c4b47df.png)
+
+
