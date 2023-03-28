@@ -11,6 +11,7 @@ import pytz     # pip install pytz
 from datetime import datetime
 from geopy.geocoders import Nominatim  # pip install geopy
 from timezonefinder import TimezoneFinder #pip install timezonefinder
+import urllib
 
 # initialize Nominatim API
 geolocator = Nominatim(user_agent="geoapiExercises")
@@ -21,10 +22,9 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         super(Main_Window,self).__init__()
         self.weatherform=Ui_MainWindow()
         self.weatherform.setupUi(self)
-
+        #To arrange background image
         self.background_label = QLabel(self)
         self.background_label.setGeometry(0, 0, self.width(), self.height())
-
         self.set_background('BackgroundImages\Telefon Duvar Kağıdı, Background Tasarımı.jpg')
         self.background_label.lower()
     
@@ -76,9 +76,26 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
                 elif description == "mist":
                     self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
+                elif description == "":
+                    pass
                 pressure=get_data_JSON["main"]["pressure"]
                 country=get_data_JSON["sys"]["country"]
                 icon=get_data_JSON["weather"][0]["icon"]
+                icon_url = f"http://openweathermap.org/img/w/{icon}.png"
+                icon_data = urllib.request.urlopen(icon_url).read()
+                icon_pixmap = QPixmap()
+                icon_pixmap.loadFromData(icon_data)
+                self.weatherform.la_icon.setPixmap(icon_pixmap)
                 
                 location = geolocator.geocode(self.city_name)
                 obj = TimezoneFinder()
@@ -131,9 +148,26 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
             elif description == "mist":
                 self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+            elif description == "":
+                    pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
+            icon_url = f"http://openweathermap.org/img/w/{icon}.png"
+            icon_data = urllib.request.urlopen(icon_url).read()
+            icon_pixmap = QPixmap()
+            icon_pixmap.loadFromData(icon_data)
+            self.weatherform.la_icon.setPixmap(icon_pixmap)
             
             location = geolocator.geocode(self.city_name)
             obj = TimezoneFinder()
@@ -203,9 +237,26 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
             elif description == "mist":
                 self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+            elif description == "":
+                    pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
+            elif description == "":
+                pass
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
+            icon_url = f"http://openweathermap.org/img/w/{icon}.png"
+            icon_data = urllib.request.urlopen(icon_url).read()
+            icon_pixmap = QPixmap()
+            icon_pixmap.loadFromData(icon_data)
+            self.weatherform.la_icon.setPixmap(icon_pixmap)
 
             location = geolocator.geocode(self.city_name)
             obj = TimezoneFinder()

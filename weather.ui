@@ -452,6 +452,19 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="la_icon">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>250</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -459,7 +472,7 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

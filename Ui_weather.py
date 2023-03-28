@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\admin\Documents\GitHub\Class_3_team_3_project_3\weather.ui'
+# Form implementation generated from reading ui file 'c:\Users\musab\OneDrive\Belgeler\GitHub\Class_3_team_3_project_3\weather.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -191,9 +191,13 @@ class Ui_MainWindow(object):
 "font: 75 8pt \"MS Shell Dlg 2\";")
         self.la_hata.setText("")
         self.la_hata.setObjectName("la_hata")
+        self.la_icon = QtWidgets.QLabel(self.centralwidget)
+        self.la_icon.setGeometry(QtCore.QRect(210, 250, 91, 91))
+        self.la_icon.setText("")
+        self.la_icon.setObjectName("la_icon")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
