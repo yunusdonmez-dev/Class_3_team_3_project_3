@@ -41,8 +41,8 @@ search for a city by typing its name in the search bar and clicking the search b
 display it on the interface along with a background image that matches the current weather 
 condition.
 
+![all_diagrams](https://user-images.githubusercontent.com/119568441/228381526-b314d1ef-f8ee-49a5-a3b2-5a6ec3a416b7.png)
 
-![case_diagram](https://user-images.githubusercontent.com/119568441/228377457-ff2e1e20-04a1-4ae6-9573-43f944d32b94.png)
 
 
 
