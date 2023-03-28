@@ -6,6 +6,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from Ui_weather import *
+import pytz     # pip install pytz
+from datetime import datetime
+from geopy.geocoders import Nominatim  # pip install geopy
+from timezonefinder import TimezoneFinder #pip install timezonefinder
+
+# initialize Nominatim API
+geolocator = Nominatim(user_agent="geoapiExercises")
 
 class Main_Window(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -25,8 +32,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.city_germany=self.db["Germany"]
         self.city_holland=self.db["Netherland"]
         self.city_usa=self.db["USA"]
+        self.show_weather_data_3()
         self.weatherform.table_cities.cellClicked.connect(self.show_weather_data)
         self.weatherform.but_search.clicked.connect(self.show_weather_data_2)
+        
  
         self.get_nl_citys()             #Default Country
         self.weatherform.but_usa.clicked.connect(self.get_usa_citys)
@@ -37,50 +46,58 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.background_label.setPixmap(QPixmap(path))
         self.background_label.setGeometry(0, 0, self.width(), self.height())
         
-    def show_weather_data(self,row,column):
-        row_current= self.weatherform.table_cities.currentRow()
-        column_current=self.weatherform.table_cities.currentColumn()
-        self.city_name=self.weatherform.table_cities.item(row_current,column_current).text()
-        self.population = self.weatherform.table_cities.item(row_current,column_current+1).text()
-        self.region = self.weatherform.table_cities.item(row_current,column_current+2).text()
-        
-       
-        #you need an api key to get data.take an api key from website
-        self.API="fb3328815f2ebd7034f6b56edaaffcda"
-        
-        self.BASE_URL="https://api.openweathermap.org/data/2.5/weather?"
-        #create url with your choice
-        self.URL=self.BASE_URL + "appid=" + self.API + "&q=" +self.city_name
-         #get data with requests
-        get_data=requests.get(self.URL)
-         #get jason format
-        get_data_JSON=get_data.json()
-       
-        
-        if (get_data_JSON["cod"] !="404"):
-            #if you get 404,you can't get data
-            temp=get_data_JSON["main"]["temp"]
-            description=get_data_JSON["weather"][0]["description"]
-            if description == "clear sky":
-                self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
-            elif description == "mist":
-                self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-            pressure=get_data_JSON["main"]["pressure"]
-            country=get_data_JSON["sys"]["country"]
-            icon=get_data_JSON["weather"][0]["icon"]
+    def show_weather_data(self):
+        try:
+            row_current= self.weatherform.table_cities.currentRow()
+            column_current=self.weatherform.table_cities.currentColumn()
+            self.city_name=self.weatherform.table_cities.item(row_current,column_current).text()
+            self.population = self.weatherform.table_cities.item(row_current,column_current+1).text()
+            self.region = self.weatherform.table_cities.item(row_current,column_current+2).text()
             
+        
+            #you need an api key to get data.take an api key from website
+            self.API="fb3328815f2ebd7034f6b56edaaffcda"
             
-            self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
-            self.weatherform.la_description.setText(description)
-            self.weatherform.la_pressure.setText(str(pressure))
-            self.weatherform.la_country.setText(country)
-            self.weatherform.la_city.setText(self.city_name)
-            self.weatherform.la_population.setText(self.population)
-            self.weatherform.la_region.setText(self.region)
+            self.BASE_URL="https://api.openweathermap.org/data/2.5/weather?"
+            #create url with your choice
+            self.URL=self.BASE_URL + "appid=" + self.API + "&q=" +self.city_name
+            #get data with requests
+            get_data=requests.get(self.URL)
+            #get jason format
+            get_data_JSON=get_data.json()
+        
             
-        else:
-            print("This country can not find, please enter correctly") 
-
+            if (get_data_JSON["cod"] !="404"):
+                #if you get 404,you can't get data
+                temp=get_data_JSON["main"]["temp"]
+                description=get_data_JSON["weather"][0]["description"]
+                if description == "clear sky":
+                    self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
+                elif description == "mist":
+                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+                pressure=get_data_JSON["main"]["pressure"]
+                country=get_data_JSON["sys"]["country"]
+                icon=get_data_JSON["weather"][0]["icon"]
+                
+                location = geolocator.geocode(self.city_name)
+                obj = TimezoneFinder()
+                result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
+                timezone = pytz.timezone(result)  # replace with the timezone of the city
+                local_time = datetime.now(timezone)
+                self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
+                
+                self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
+                self.weatherform.la_description.setText(description)
+                self.weatherform.la_pressure.setText(str(pressure))
+                self.weatherform.la_country.setText(country)
+                self.weatherform.la_city.setText(self.city_name)
+                self.weatherform.la_population.setText(self.population)
+                self.weatherform.la_region.setText(self.region)
+                
+            else:
+                print("This country can not find, please enter correctly") 
+        except :
+            return
 
     def show_weather_data_2(self):
 
@@ -110,6 +127,81 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             pressure=get_data_JSON["main"]["pressure"]
             country=get_data_JSON["sys"]["country"]
             icon=get_data_JSON["weather"][0]["icon"]
+            
+            location = geolocator.geocode(self.city_name)
+            obj = TimezoneFinder()
+            result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
+            timezone = pytz.timezone(result)  # replace with the timezone of the city
+            local_time = datetime.now(timezone)
+            self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
+            
+            self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
+            self.weatherform.la_description.setText(description)
+            self.weatherform.la_pressure.setText(str(pressure))
+            self.weatherform.la_country.setText(country)
+            self.weatherform.la_city.setText(self.city_name)
+            try:
+                self.weatherform.la_population.setText(str(self.db.Germany.find_one({"city":f"{self.city_name}"})['population']))
+            except:
+                pass
+            try:
+                self.weatherform.la_population.setText(str(self.db.Netherland.find_one({"city":f"{self.city_name}"})['population']))
+            except:
+                pass
+            try:
+                self.weatherform.la_population.setText(str(self.db.USA.find_one({"city":f"{self.city_name}"})['population']))
+            except:
+                pass
+            try:
+                self.weatherform.la_region.setText(str(self.db.Germany.find_one({"city":f"{self.city_name}"})['region']))
+            except:
+                pass
+            try:
+                self.weatherform.la_region.setText(str(self.db.Netherland.find_one({"city":f"{self.city_name}"})['region']))
+            except:
+                pass
+            try:
+                self.weatherform.la_region.setText(str(self.db.USA.find_one({"city":f"{self.city_name}"})['region']))
+            except:
+                pass
+    def show_weather_data_3(self):
+
+        '''
+        Default city at the opening
+        '''
+        self.city_name='Amsterdam'
+        #you need an api key to get data.take an api key from website
+        self.API="fb3328815f2ebd7034f6b56edaaffcda"
+        
+        self.BASE_URL="https://api.openweathermap.org/data/2.5/weather?"
+        #self.CITY_NAME=self.combo_city.currentText( )
+        #create url with your choice
+        self.URL=self.BASE_URL + "appid=" + self.API + "&q=" +self.city_name
+         #get data with requests
+        get_data=requests.get(self.URL)
+         #get jason format
+        get_data_JSON=get_data.json()
+       
+        
+        if (get_data_JSON["cod"] !="404"):
+            #if you get 404,you can't get data
+            temp=get_data_JSON["main"]["temp"]
+            description=get_data_JSON["weather"][0]["description"]
+            if description == "clear sky":
+                self.set_background('BackgroundImages\Deniz Kenarı Gökyüzü Martılar Günaydın Temalı Instagram Hikayesi.jpg')
+            elif description == "mist":
+                self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
+            pressure=get_data_JSON["main"]["pressure"]
+            country=get_data_JSON["sys"]["country"]
+            icon=get_data_JSON["weather"][0]["icon"]
+
+            location = geolocator.geocode(self.city_name)
+            obj = TimezoneFinder()
+            result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
+            timezone = pytz.timezone(result)  # replace with the timezone of the city
+            local_time = datetime.now(timezone)
+            self.weatherform.label.setText(local_time.strftime('%H:%M:%S'))
+            # print(f"Current time in {self.city_name}: {local_time.strftime('%Y-%m-%d %H:%M:%S')}")
             
             self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
             self.weatherform.la_description.setText(description)
