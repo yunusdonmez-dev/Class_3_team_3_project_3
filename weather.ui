@@ -148,7 +148,7 @@ border-radius: 10px;
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>300</y>
+      <y>260</y>
       <width>221</width>
       <height>61</height>
      </rect>
@@ -180,7 +180,7 @@ border-radius: 10px;
     <property name="geometry">
      <rect>
       <x>550</x>
-      <y>380</y>
+      <y>340</y>
       <width>221</width>
       <height>51</height>
      </rect>
@@ -221,7 +221,7 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>80</y>
+      <y>110</y>
       <width>301</width>
       <height>211</height>
      </rect>
@@ -302,7 +302,8 @@ font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 138);
+     <string notr="true">
+color: rgb(0, 0, 91);
 background-color: rgb(255, 255, 255, 10);
 font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
@@ -428,6 +429,24 @@ color: rgb(0, 0, 138);</string>
      <string notr="true">background-color: rgb(255, 255, 255, 10);
 font: 75 10pt &quot;MS Shell Dlg 2&quot;;
 color: rgb(0, 0, 138);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="la_hata">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>412</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 138);
+background-color: rgb(255, 255, 255, 10);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
      <string/>

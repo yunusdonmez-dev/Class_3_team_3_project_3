@@ -97,11 +97,17 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 
             else:
                 print("This country can not find, please enter correctly") 
+            self.weatherform.la_hata.clear()            
         except :
             return
 
     def show_weather_data_2(self):
-
+        if not self.weatherform.li_city.text():
+            self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
+            
+            return
+        
+        
 
         self.city_name=self.weatherform.li_city.text()
         #you need an api key to get data.take an api key from website
@@ -141,6 +147,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.la_pressure.setText(str(pressure))
             self.weatherform.la_country.setText(country)
             self.weatherform.la_city.setText(self.city_name)
+            self.weatherform.la_hata.setText("") # clear error message if it was set previously
             try:
                 self.weatherform.la_population.setText(str(self.db.Germany.find_one({"city":f"{self.city_name}"})['population']))
             except:
@@ -164,7 +171,11 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             try:
                 self.weatherform.la_region.setText(str(self.db.USA.find_one({"city":f"{self.city_name}"})['region']))
             except:
-                pass
+                pass  
+        
+        else:
+             self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name 
+        self.weatherform.la_hata.clear()        
     def show_weather_data_3(self):
 
         '''
