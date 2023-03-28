@@ -46,7 +46,7 @@ class Ui_MainWindow(object):
         self.but_gr.setObjectName("but_gr")
         self.table_cities = QtWidgets.QTableWidget(self.centralwidget)
         self.table_cities.setGeometry(QtCore.QRect(180, 470, 381, 311))
-        self.table_cities.setStyleSheet("background-color: transparent;\n"
+        self.table_cities.setStyleSheet("background-color: transparent; border: none;"
 "")
         self.table_cities.setShowGrid(False)
         self.table_cities.setGridStyle(QtCore.Qt.SolidLine)
