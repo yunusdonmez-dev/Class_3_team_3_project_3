@@ -16,9 +16,12 @@ To install the project, follow these steps:
 
 4.Clone the project from GitHub.
 
-![github-logo-vector](https://user-images.githubusercontent.com/119568441/228377145-9a278f2c-c198-4063-b41a-c6d4dc673e52.png)
+![pyQt](https://user-images.githubusercontent.com/119568441/228377858-9419e2e1-0d1d-4aba-9bf7-f921d2ea6aa1.JPG)
 
-![github-logo-vector](https://user-images.githubusercontent.com/119568441/228377186-c5acfdd8-36c3-4da4-81cc-e6ee6f6ec6f1.png)
+
+
+![pyQt](https://user-images.githubusercontent.com/119568441/228377794-fac784d7-6bd8-4472-ae3e-8c15d907ea66.JPG)
+
 
 ![github-logo-vector](https://user-images.githubusercontent.com/119568441/228377232-53eeaa70-ab7b-47c6-a083-bd7ac08c84ea.png)
 
