@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\musab\OneDrive\Belgeler\GitHub\Class_3_team_3_project_3\weather.ui'
+# Form implementation generated from reading ui file 'c:\Users\admin\Documents\GitHub\Class_3_team_3_project_3\weather.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 900)
         MainWindow.setMinimumSize(QtCore.QSize(800, 900))
-        MainWindow.setMaximumSize(QtCore.QSize(800, 900))
+        MainWindow.setMaximumSize(QtCore.QSize(141, 900))
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -90,7 +90,7 @@ class Ui_MainWindow(object):
         self.li_city.setAlignment(QtCore.Qt.AlignCenter)
         self.li_city.setObjectName("li_city")
         self.but_search = QtWidgets.QPushButton(self.centralwidget)
-        self.but_search.setGeometry(QtCore.QRect(550, 400, 221, 51))
+        self.but_search.setGeometry(QtCore.QRect(550, 390, 221, 51))
         self.but_search.setStyleSheet("color: rgb(0, 0, 138);\n"
 "background-color: rgb(66, 145, 158, 180);\n"
 "font: 87 10pt \"Segoe UI Black\";\n"
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         self.la_country.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.la_country.setObjectName("la_country")
         self.la_region = QtWidgets.QLabel(self.centralwidget)
-        self.la_region.setGeometry(QtCore.QRect(40, 180, 141, 121))
+        self.la_region.setGeometry(QtCore.QRect(30, 180, 141, 121))
         self.la_region.setMaximumSize(QtCore.QSize(141, 121))
         self.la_region.setStyleSheet("\n"
 "color: rgb(0, 0, 91);\n"
@@ -188,7 +188,7 @@ class Ui_MainWindow(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.la_hata = QtWidgets.QLabel(self.centralwidget)
-        self.la_hata.setGeometry(QtCore.QRect(560, 412, 201, 41))
+        self.la_hata.setGeometry(QtCore.QRect(560, 430, 201, 41))
         self.la_hata.setStyleSheet("color: rgb(0, 0, 138);\n"
 "background-color: rgb(255, 255, 255, 10);\n"
 "font: 75 8pt \"MS Shell Dlg 2\";")
@@ -209,7 +209,7 @@ class Ui_MainWindow(object):
 "")
         self.but_exit.setObjectName("but_exit")
         self.la_total = QtWidgets.QLabel(self.centralwidget)
-        self.la_total.setGeometry(QtCore.QRect(180, 780, 381, 31))
+        self.la_total.setGeometry(QtCore.QRect(180, 440, 381, 31))
         self.la_total.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
 "font: 75 10pt \"MS Shell Dlg 2\";\n"
 "color: rgb(0, 0, 138);\n"
@@ -217,7 +217,7 @@ class Ui_MainWindow(object):
         self.la_total.setObjectName("la_total")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)

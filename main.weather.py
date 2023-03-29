@@ -49,6 +49,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
              
         
     def show_weather_data(self):
+        if not self.weatherform.li_city.text():
+            self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
+            
+        
         try:
             row_current= self.weatherform.table_cities.currentRow()
             column_current=self.weatherform.table_cities.currentColumn()
@@ -141,6 +145,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             return
 
     def show_weather_data_2(self):
+        
         if not self.weatherform.li_city.text():
             self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
             
@@ -361,6 +366,8 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 pass
     
     def get_usa_citys(self):   # to get the usa cities, region of the cities and the population to the tablewidget
+        total_cities = self.weatherform.table_cities.rowCount()
+        self.weatherform.la_total.setText(str(total_cities))
         info_cities=self.city_usa.find({"country":"USA"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -373,7 +380,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1   
-    def get_gr_citys(self):                              # to get the Germany cities, region of the cities and the population to the tablewidget 
+    def get_gr_citys(self): 
+        # to get the Germany cities, region of the cities and the population to the tablewidget 
+        total_cities = self.weatherform.table_cities.rowCount()
+        self.weatherform.la_total.setText(str(total_cities))
         info_cities=self.city_germany.find({"country":"Germany"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -390,6 +400,8 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             
             
     def get_nl_citys(self):       # to get the NL cities, region of the cities and the population to the tablewidget
+        total_cities = self.weatherform.table_cities.rowCount()
+        self.weatherform.la_total.setText(str(total_cities))
         info_cities=self.city_holland.find({"country":"Holland"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
