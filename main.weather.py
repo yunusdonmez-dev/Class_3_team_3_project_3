@@ -45,7 +45,11 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     
     def set_background(self, path):
         self.background_label.setPixmap(QPixmap(path))
+        pixmap = QPixmap(path)
+        pixmap = pixmap.scaled(self.width(), self.height())
+        self.background_label.setPixmap(pixmap)
         self.background_label.setGeometry(0, 0, self.width(), self.height())
+        self.background_label.lower()
              
         
     def show_weather_data(self):
@@ -97,8 +101,8 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                         self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
                     elif description == "mist":
                         self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                    elif description == "":
-                            pass
+                    elif description == "overcast clouds":
+                        self.set_background('BackgroundImages\\boris-baldinger-eUFfY6cwjSU-unsplash.jpg')
                     elif description == "":
                         pass
                     elif description == "":
