@@ -151,7 +151,15 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
         
             return
+        city_name = self.weatherform.li_city.text()
+        query_result = self.city_germany.find_one({"city": city_name}) or \
+                       self.city_holland.find_one({"city": city_name}) or \
+                       self.city_usa.find_one({"city": city_name}) #check if the cities exist or not
     
+        if not query_result:
+            self.weatherform.la_hata.setText("City not found.")#If the city is not found, the label will display "City not found."
+            self.weatherform.li_city.clear()
+            return
         
        
         
