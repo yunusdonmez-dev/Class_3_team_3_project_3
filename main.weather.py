@@ -49,9 +49,6 @@ class Main_Window(QMainWindow, Ui_MainWindow):
              
         
     def show_weather_data(self):
-        if not self.weatherform.li_city.text():
-            self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
-            
         
         try:
             row_current= self.weatherform.table_cities.currentRow()
@@ -148,11 +145,13 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         
         if not self.weatherform.li_city.text():
             self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
-            
+        
             return
+    
         
+       
         
-
+       
         self.city_name=self.weatherform.li_city.text()
         #you need an api key to get data.take an api key from website
         self.API="fb3328815f2ebd7034f6b56edaaffcda"
@@ -230,6 +229,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.la_country.setText(country)
             self.weatherform.la_city.setText(self.city_name)
             self.weatherform.la_hata.setText("") # clear error message if it was set previously
+           #################### self.weatherform.la_region.setText(str(a))
             try:
                 self.weatherform.la_population.setText(str(self.db.Germany.find_one({"city":f"{self.city_name}"})['population']))
             except:
@@ -256,8 +256,16 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 pass  
         
         else:
-             self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name 
-        self.weatherform.la_hata.clear()        
+           # if not result: # if the city is not found in one of the collections
+              self.weatherform.la_hata.setText("Unknown City") 
+              #print("hata")
+              return
+        self.weatherform.la_hata.clear()
+        self.weatherform.li_city.setText("")
+      
+             #self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name 
+        #self.weatherform.la_hata.clear()
+           
     def show_weather_data_3(self):
 
         '''
@@ -367,7 +375,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
     
     def get_usa_citys(self):   # to get the usa cities, region of the cities and the population to the tablewidget
         total_cities = self.weatherform.table_cities.rowCount()
-        self.weatherform.la_total.setText(str(total_cities))
+        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
         info_cities=self.city_usa.find({"country":"USA"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -380,10 +388,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1   
-    def get_gr_citys(self): 
-        # to get the Germany cities, region of the cities and the population to the tablewidget 
-        total_cities = self.weatherform.table_cities.rowCount()
-        self.weatherform.la_total.setText(str(total_cities))
+    def get_gr_citys(self): # to get the Germany cities, region of the cities and the population to the tablewidget 
+        
+        total_cities = self.weatherform.table_cities.rowCount()#count of the cities
+        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
         info_cities=self.city_germany.find({"country":"Germany"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -401,7 +409,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             
     def get_nl_citys(self):       # to get the NL cities, region of the cities and the population to the tablewidget
         total_cities = self.weatherform.table_cities.rowCount()
-        self.weatherform.la_total.setText(str(total_cities))
+        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
         info_cities=self.city_holland.find({"country":"Holland"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
