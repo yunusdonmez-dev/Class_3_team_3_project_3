@@ -4,7 +4,7 @@ Infotech data science course - Project-3
 
 WeatherApp
 
-              How to Install
+              HOW TO INSTALL
 
 To install the project, follow these steps:
 
@@ -28,8 +28,7 @@ To install the project, follow these steps:
 
 
 
-
-            How to Use
+          HOW TO USE
 To use the project, follow these steps:
 
 1.Launch the program.
@@ -48,7 +47,7 @@ condition.
 
 
 
-           Project Structure
+           PROJECT STRUCTURES
 
 The WeatherApp project was developed using Python, PyQt5, Scrapy, and MongoDB.
 The user interface was designed using PyQt5, and real-time weather information was fetched using an API. 
@@ -57,7 +56,7 @@ Germany was retrieved from Wikipedia and stored in tables in MongoDB.
 Scrapy was used to scrape information about the selected city and store it in the database.
 
 
-          Dependencies
+          DEPENDENCIES
 
 The following dependencies are required to run the project:
 
