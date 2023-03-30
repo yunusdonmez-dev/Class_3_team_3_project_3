@@ -127,9 +127,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     elif description == "rain" or description == "light rain":
                         self.set_background('BackgroundImages\\rain_day2.jpg')
                 
-                    elif description == "broken clouds" or description =="scattered clouds" or description =="few clouds":
+                    elif description =="scattered clouds" or description =="few clouds":
                         self.set_background("BackgroundImages\overcast_day3.jpg")
-                        
+                    elif description == "broken clouds":
+                        self.set_background("BackgroundImages\\1e3b26afc18a3693832ef07890e841b9.jpg")
                     elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
@@ -240,9 +241,11 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "rain" or description == "light rain":
                     self.set_background('BackgroundImages\\rain_day2.jpg')
             
-                elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
-                    self.set_background("BackgroundImages\overcast_day3.jpg")
-                    
+                elif description =="scattered clouds" or description =="few clouds":
+                        self.set_background("BackgroundImages\overcast_day3.jpg")
+                elif description == "broken clouds":
+                    self.set_background("BackgroundImages\\1e3b26afc18a3693832ef07890e841b9.jpg")
+                
                 elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
@@ -369,8 +372,10 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "rain" or description == "light rain":
                     self.set_background('BackgroundImages\\rain_day2.jpg')
             
-                elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
-                    self.set_background("BackgroundImages\overcast_day3.jpg")
+                elif description =="scattered clouds" or description =="few clouds":
+                        self.set_background("BackgroundImages\overcast_day3.jpg")
+                elif description == "broken clouds":
+                    self.set_background("BackgroundImages\\1e3b26afc18a3693832ef07890e841b9.jpg")
                     
                 elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
