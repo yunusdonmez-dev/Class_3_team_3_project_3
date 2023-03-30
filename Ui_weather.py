@@ -106,7 +106,7 @@ class Ui_MainWindow(object):
         self.la_description.setAlignment(QtCore.Qt.AlignCenter)
         self.la_description.setObjectName("la_description")
         self.la_temperature = QtWidgets.QLabel(self.centralwidget)
-        self.la_temperature.setGeometry(QtCore.QRect(260, 110, 301, 211))
+        self.la_temperature.setGeometry(QtCore.QRect(260, 120, 301, 201))
         self.la_temperature.setStyleSheet("color: rgb(0, 0, 138);\n"
 "background-color: rgb(255, 255, 255, 10);\n"
 "font: 75 66pt \"MS Shell Dlg 2\";")
@@ -159,7 +159,7 @@ class Ui_MainWindow(object):
         self.la_pressure.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.la_pressure.setObjectName("la_pressure")
         self.la_pressure_lbl = QtWidgets.QLabel(self.centralwidget)
-        self.la_pressure_lbl.setGeometry(QtCore.QRect(280, 320, 171, 71))
+        self.la_pressure_lbl.setGeometry(QtCore.QRect(280, 330, 171, 61))
         self.la_pressure_lbl.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
 "font: 87 10pt \"Segoe UI Black\";\n"
 "color: rgb(0, 0, 138);\n"
@@ -177,14 +177,16 @@ class Ui_MainWindow(object):
         self.la_time = QtWidgets.QLabel(self.centralwidget)
         self.la_time.setGeometry(QtCore.QRect(590, 10, 71, 21))
         self.la_time.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 138);")
+"font: 87 10pt \"Segoe UI Black\";\n"
+"color: rgb(0, 0, 0);\n"
+"")
         self.la_time.setObjectName("la_time")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(670, 10, 111, 21))
         self.label.setStyleSheet("background-color: rgb(255, 255, 255, 10);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 138);")
+"font: 87 10pt \"Segoe UI Black\";\n"
+"color: rgb(0, 0, 0);\n"
+"")
         self.label.setText("")
         self.label.setObjectName("label")
         self.la_hata = QtWidgets.QLabel(self.centralwidget)

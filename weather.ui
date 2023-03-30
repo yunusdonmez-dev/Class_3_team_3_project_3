@@ -225,9 +225,9 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>110</y>
+      <y>120</y>
       <width>301</width>
-      <height>211</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -367,9 +367,9 @@ font: 87 10pt &quot;Segoe UI Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>320</y>
+      <y>330</y>
       <width>171</width>
-      <height>71</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -416,8 +416,9 @@ color: rgb(0, 0, 138);
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255, 10);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 138);</string>
+font: 87 10pt &quot;Segoe UI Black&quot;;
+color: rgb(0, 0, 0);
+</string>
     </property>
     <property name="text">
      <string>Local Time :</string>
@@ -434,8 +435,9 @@ color: rgb(0, 0, 138);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255, 10);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 138);</string>
+font: 87 10pt &quot;Segoe UI Black&quot;;
+color: rgb(0, 0, 0);
+</string>
     </property>
     <property name="text">
      <string/>
