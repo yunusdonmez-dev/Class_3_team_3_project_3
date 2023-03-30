@@ -1,7 +1,6 @@
 from PyQt5 import QtWidgets
 import requests,pymongo
 import sys
-from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
