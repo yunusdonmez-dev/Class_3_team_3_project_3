@@ -1,7 +1,6 @@
 from PyQt5 import QtWidgets
 import requests,pymongo
 import sys
-from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
@@ -27,7 +26,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.background_label.setGeometry(0, 0, self.width(), self.height())
         self.set_background("BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg")
         self.background_label.lower()
-    
+        #connect to mongo db
         self.client=pymongo.MongoClient('mongodb+srv://yunus:1234@cluster0.lytui3m.mongodb.net/?retryWrites=true&w=majority')
         self.db=self.client["WeatherApp"]
         self.city_germany=self.db["Germany"]
@@ -113,7 +112,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
                     elif description == "thunderstorm":
-                        self.set_background("BackgroundImages\thunder_night.jpg")
+                        self.set_background("BackgroundImages\\thunder_night.jpg")
                         
                     elif description == "snow":
                         self.set_background("BackgroundImages\snow_day2.jpg")
@@ -128,14 +127,15 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     elif description == "rain" or description == "light rain":
                         self.set_background('BackgroundImages\\rain_day2.jpg')
                 
-                    elif description == "broken clouds" or description =="scattered clouds" or description =="few clouds":
+                    elif description =="scattered clouds" or description =="few clouds":
                         self.set_background("BackgroundImages\overcast_day3.jpg")
-                        
+                    elif description == "broken clouds":
+                        self.set_background("BackgroundImages\\1e3b26afc18a3693832ef07890e841b9.jpg")
                     elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
                     elif description == "thunderstorm":
-                        self.set_background("BackgroundImages\thunder_day.jpg")
+                        self.set_background("BackgroundImages\\thunder_day.jpg")
                         
                     elif description == "snow":
                         self.set_background("BackgroundImages\snowy_day.jpg")
@@ -226,7 +226,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_night.jpg")
+                    self.set_background("BackgroundImages\\thunder_night.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snow_day2.jpg")
@@ -241,14 +241,16 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "rain" or description == "light rain":
                     self.set_background('BackgroundImages\\rain_day2.jpg')
             
-                elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
-                    self.set_background("BackgroundImages\overcast_day3.jpg")
-                    
+                elif description =="scattered clouds" or description =="few clouds":
+                        self.set_background("BackgroundImages\overcast_day3.jpg")
+                elif description == "broken clouds":
+                    self.set_background("BackgroundImages\\1e3b26afc18a3693832ef07890e841b9.jpg")
+                
                 elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_day.jpg")
+                    self.set_background("BackgroundImages\\thunder_day.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snowy_day.jpg")
@@ -355,7 +357,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_night.jpg")
+                    self.set_background("BackgroundImages\\thunder_night.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snow_day2.jpg")
@@ -370,14 +372,16 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "rain" or description == "light rain":
                     self.set_background('BackgroundImages\\rain_day2.jpg')
             
-                elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
-                    self.set_background("BackgroundImages\overcast_day3.jpg")
+                elif description =="scattered clouds" or description =="few clouds":
+                        self.set_background("BackgroundImages\overcast_day3.jpg")
+                elif description == "broken clouds":
+                    self.set_background("BackgroundImages\\1e3b26afc18a3693832ef07890e841b9.jpg")
                     
                 elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_day.jpg")
+                    self.set_background("BackgroundImages\\thunder_day.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snowy_day.jpg")
