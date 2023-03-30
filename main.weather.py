@@ -52,7 +52,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         self.background_label.lower()
              
         
-    def show_weather_data(self):
+    def show_weather_data(self): # Show weather condition of the city thats selected from table
         
         try:
             row_current= self.weatherform.table_cities.currentRow()
@@ -145,7 +145,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         except :
             return
 
-    def show_weather_data_2(self):
+    def show_weather_data_2(self): #Show weather condition of the city in the line edit
         
         if not self.weatherform.li_city.text():
             self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name    
@@ -278,7 +278,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
              #self.weatherform.la_hata.setText("Please enter a valid city name") # show error message for invalid city name 
         #self.weatherform.la_hata.clear()
            
-    def show_weather_data_3(self):
+    def show_weather_data_3(self):  #Show weather condition of the default city at the opening
 
         '''
         Default city at the opening
@@ -386,8 +386,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 pass
     
     def get_usa_citys(self):   # to get the usa cities, region of the cities and the population to the tablewidget
-        total_cities = self.weatherform.table_cities.rowCount()
-        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
+        
         info_cities=self.city_usa.find({"country":"USA"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -400,10 +399,11 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1   
+        total_cities = self.weatherform.table_cities.rowCount()
+        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
     def get_gr_citys(self): # to get the Germany cities, region of the cities and the population to the tablewidget 
         
-        total_cities = self.weatherform.table_cities.rowCount()#count of the cities
-        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
+        
         info_cities=self.city_germany.find({"country":"Germany"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -416,12 +416,11 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 0, QtWidgets.QTableWidgetItem(i["city"]))
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
-            row +=1   
-            
-            
+            row +=1        
+        total_cities = self.weatherform.table_cities.rowCount()#count of the cities
+        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))  
     def get_nl_citys(self):       # to get the NL cities, region of the cities and the population to the tablewidget
-        total_cities = self.weatherform.table_cities.rowCount()
-        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
+        
         info_cities=self.city_holland.find({"country":"Holland"},{"city":1,"population":1,"region":1})
         rows_info=[]
         for i in info_cities:
@@ -435,6 +434,8 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.table_cities.setItem(row, 1, QtWidgets.QTableWidgetItem(str(i["population"])))
             self.weatherform.table_cities.setItem(row, 2, QtWidgets.QTableWidgetItem(i["region"]))
             row +=1 
+        total_cities = self.weatherform.table_cities.rowCount()
+        self.weatherform.la_total.setText("TOTAL CITIES:"+str(total_cities))
    
         
 
