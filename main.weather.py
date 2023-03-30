@@ -93,7 +93,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
                 timezone = pytz.timezone(result)  # replace with the timezone of the city
                 self.local_time = datetime.datetime.now(timezone)
-                specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=13, minute=0, second=0).time()
+                specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
                 self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
 
                 if self.local_time.time() >= specific_time:
@@ -104,12 +104,12 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     elif description == "overcast clouds":
                         self.set_background('BackgroundImages\\richard-felix-V05SI4UtPBs-unsplash.jpg')
                     elif description == "rain" or description == "light rain":
-                        self.set_background('BackgroundImages\gece yagis.jpg')
+                        self.set_background('BackgroundImages\severin-stalder-pe8ETR2u9h0-unsplash.jpg')
                 
                     elif description == "broken clouds" or description =="scattered clouds" or description =="few clouds":
                         self.set_background("BackgroundImages\\nitish-meena-RbbdzZBKRDY-unsplash.jpg")
                         
-                    elif description == "shower rain":
+                    elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
                     elif description == "thunderstorm":
@@ -131,7 +131,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     elif description == "broken clouds" or description =="scattered clouds" or description =="few clouds":
                         self.set_background("BackgroundImages\overcast_day3.jpg")
                         
-                    elif description == "shower rain":
+                    elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
                     elif description == "thunderstorm":
@@ -206,7 +206,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
             timezone = pytz.timezone(result)  # replace with the timezone of the city
             self.local_time = datetime.datetime.now(timezone)
-            specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=13, minute=0, second=0).time()
+            specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
             self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
 
             if self.local_time.time() >= specific_time:
@@ -217,12 +217,12 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "overcast clouds":
                     self.set_background('BackgroundImages\\richard-felix-V05SI4UtPBs-unsplash.jpg')
                 elif description == "rain" or description == "light rain":
-                    self.set_background('BackgroundImages\gece yagis.jpg')
+                    self.set_background('BackgroundImages\severin-stalder-pe8ETR2u9h0-unsplash.jpg')
             
                 elif description == "broken clouds" or description =="scattered clouds" or description =="few clouds":
                     self.set_background("BackgroundImages\\nitish-meena-RbbdzZBKRDY-unsplash.jpg")
                     
-                elif description == "shower rain":
+                elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
@@ -244,7 +244,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
                     self.set_background("BackgroundImages\overcast_day3.jpg")
                     
-                elif description == "shower rain":
+                elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
@@ -334,7 +334,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             result = obj.timezone_at(lng=location.longitude, lat=location.latitude)
             timezone = pytz.timezone(result)  # replace with the timezone of the city
             self.local_time = datetime.datetime.now(timezone)
-            specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=13, minute=0, second=0).time()
+            specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
             self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
             # print(f"Current time in {self.city_name}: {self.local_time.strftime('%Y-%m-%d %H:%M:%S')}")
         
@@ -346,12 +346,12 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "overcast clouds":
                     self.set_background('BackgroundImages\\richard-felix-V05SI4UtPBs-unsplash.jpg')
                 elif description == "rain" or description == "light rain":
-                    self.set_background('BackgroundImages\gece yagis.jpg')
+                    self.set_background('BackgroundImages\severin-stalder-pe8ETR2u9h0-unsplash.jpg')
             
                 elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
                     self.set_background("BackgroundImages\\nitish-meena-RbbdzZBKRDY-unsplash.jpg")
                     
-                elif description == "shower rain":
+                elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
@@ -373,7 +373,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 elif description == "broken clouds" or description == "scattered clouds" or description =="few clouds":
                     self.set_background("BackgroundImages\overcast_day3.jpg")
                     
-                elif description == "shower rain":
+                elif description == "shower rain" or description == "intensity shower" or description == "moderate rain":
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
