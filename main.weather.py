@@ -112,7 +112,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
                     elif description == "thunderstorm":
-                        self.set_background("BackgroundImages\thunder_night.jpg")
+                        self.set_background("BackgroundImages\\thunder_night.jpg")
                         
                     elif description == "snow":
                         self.set_background("BackgroundImages\snow_day2.jpg")
@@ -135,7 +135,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                         self.set_background("BackgroundImages\heavyrain_day.jpg")
                         
                     elif description == "thunderstorm":
-                        self.set_background("BackgroundImages\thunder_day.jpg")
+                        self.set_background("BackgroundImages\\thunder_day.jpg")
                         
                     elif description == "snow":
                         self.set_background("BackgroundImages\snowy_day.jpg")
@@ -226,7 +226,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_night.jpg")
+                    self.set_background("BackgroundImages\\thunder_night.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snow_day2.jpg")
@@ -250,7 +250,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_day.jpg")
+                    self.set_background("BackgroundImages\\thunder_day.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snowy_day.jpg")
@@ -357,7 +357,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_night.jpg")
+                    self.set_background("BackgroundImages\\thunder_night.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snow_day2.jpg")
@@ -381,7 +381,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background("BackgroundImages\heavyrain_day.jpg")
                     
                 elif description == "thunderstorm":
-                    self.set_background("BackgroundImages\thunder_day.jpg")
+                    self.set_background("BackgroundImages\\thunder_day.jpg")
                     
                 elif description == "snow":
                     self.set_background("BackgroundImages\snowy_day.jpg")
