@@ -102,34 +102,43 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     elif description == "mist":
                         self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
                     elif description == "overcast clouds":
-                        self.set_background('BackgroundImages\\boris-baldinger-eUFfY6cwjSU-unsplash.jpg')
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
+                        self.set_background('BackgroundImages\overcast_night.jpg')
+                    elif description == "rain":
+                        self.set_background('BackgroundImages\gece yagis.jpg')
+                
+                    elif description == "broken clouds" or description =="scattered clouds":
+                        self.set_background("BackgroundImages\overcast_night.jpg")
+                        
+                    elif description == "shower rain":
+                        self.set_background("BackgroundImages\heavyrain_day.jpg")
+                        
+                    elif description == "thunderstorm":
+                        self.set_background("BackgroundImages\thunder_night.jpg")
+                        
+                    elif description == "snow":
+                        self.set_background("BackgroundImages\snow_day2.jpg")
+                        
                 else:
                     if description == "clear sky":
-                        self.set_background('BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg')
+                        self.set_background('BackgroundImages\clearsky_day.jpeg')
                     elif description == "mist":
-                        self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                    elif description == "":
-                            pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
-                    elif description == "":
-                        pass
+                        self.set_background('BackgroundImages\mist_day.jpg')
+                    elif description == "overcast clouds":
+                        self.set_background('BackgroundImages\overcast_day3.jpg')
+                    elif description == "rain":
+                        self.set_background('BackgroundImages\\rain_day2.jpg')
+                
+                    elif description == "broken clouds" or description =="scattered clouds":
+                        self.set_background("BackgroundImages\overcast_day3.jpg")
+                        
+                    elif description == "shower rain":
+                        self.set_background("BackgroundImages\heavyrain_day.jpg")
+                        
+                    elif description == "thunderstorm":
+                        self.set_background("BackgroundImages\thunder_day.jpg")
+                        
+                    elif description == "snow":
+                        self.set_background("BackgroundImages\snowy_day.jpg")
                 
                 self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°") #write the informations to the labels
                 self.weatherform.la_description.setText(description)
@@ -205,35 +214,44 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
                 elif description == "mist":
                     self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "broken clouds":
-                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
+                elif description == "overcast clouds":
+                    self.set_background('BackgroundImages\overcast_night.jpg')
+                elif description == "rain":
+                    self.set_background('BackgroundImages\gece yagis.jpg')
+            
+                elif description == "broken clouds" or description =="scattered clouds":
+                    self.set_background("BackgroundImages\overcast_night.jpg")
+                    
+                elif description == "shower rain":
+                    self.set_background("BackgroundImages\heavyrain_day.jpg")
+                    
+                elif description == "thunderstorm":
+                    self.set_background("BackgroundImages\thunder_night.jpg")
+                    
+                elif description == "snow":
+                    self.set_background("BackgroundImages\snow_day2.jpg")
+                    
             else:
                 if description == "clear sky":
-                    self.set_background('BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg')
+                    self.set_background('BackgroundImages\clearsky_day.jpeg')
                 elif description == "mist":
-                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "broken clouds":
-                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
+                    self.set_background('BackgroundImages\mist_day.jpg')
+                elif description == "overcast clouds":
+                    self.set_background('BackgroundImages\overcast_day3.jpg')
+                elif description == "rain":
+                    self.set_background('BackgroundImages\\rain_day2.jpg')
+            
+                elif description == "broken clouds" or description =="scattered clouds":
+                    self.set_background("BackgroundImages\overcast_day3.jpg")
+                    
+                elif description == "shower rain":
+                    self.set_background("BackgroundImages\heavyrain_day.jpg")
+                    
+                elif description == "thunderstorm":
+                    self.set_background("BackgroundImages\thunder_day.jpg")
+                    
+                elif description == "snow":
+                    self.set_background("BackgroundImages\snowy_day.jpg")
             
             self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
             self.weatherform.la_description.setText(description)
@@ -325,35 +343,44 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                     self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
                 elif description == "mist":
                     self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "":
-                        pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
+                elif description == "overcast clouds":
+                    self.set_background('BackgroundImages\overcast_night.jpg')
+                elif description == "rain":
+                    self.set_background('BackgroundImages\gece yagis.jpg')
+            
+                elif description == "broken clouds" or description =="scattered clouds":
+                    self.set_background("BackgroundImages\overcast_night.jpg")
+                    
+                elif description == "shower rain":
+                    self.set_background("BackgroundImages\heavyrain_day.jpg")
+                    
+                elif description == "thunderstorm":
+                    self.set_background("BackgroundImages\thunder_night.jpg")
+                    
+                elif description == "snow":
+                    self.set_background("BackgroundImages\snow_day2.jpg")
+                    
             else:
                 if description == "clear sky":
-                    self.set_background('BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg')
+                    self.set_background('BackgroundImages\clearsky_day.jpeg')
                 elif description == "mist":
-                    self.set_background('BackgroundImages\Gray Minimalist Nature Mindset Inspirational Quote Instagram Reel.jpg')
-                elif description == "":
-                        pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
-                elif description == "":
-                    pass
+                    self.set_background('BackgroundImages\mist_day.jpg')
+                elif description == "overcast clouds":
+                    self.set_background('BackgroundImages\overcast_day3.jpg')
+                elif description == "rain":
+                    self.set_background('BackgroundImages\\rain_day2.jpg')
+            
+                elif description == "broken clouds" or description =="scattered clouds":
+                    self.set_background("BackgroundImages\overcast_day3.jpg")
+                    
+                elif description == "shower rain":
+                    self.set_background("BackgroundImages\heavyrain_day.jpg")
+                    
+                elif description == "thunderstorm":
+                    self.set_background("BackgroundImages\thunder_day.jpg")
+                    
+                elif description == "snow":
+                    self.set_background("BackgroundImages\snowy_day.jpg")
             
             self.weatherform.la_temperature.setText(str(int(float(temp)-273.15))+"C°")
             self.weatherform.la_description.setText(description)
@@ -444,6 +471,8 @@ if __name__ == "__main__":
         Main_Window = Main_Window()
         widget = QtWidgets.QStackedWidget()
         widget.addWidget(Main_Window)
+        widget.setFixedHeight(900)
+        widget.setFixedWidth(800)
         
         widget.show()
         
