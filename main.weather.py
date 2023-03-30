@@ -22,7 +22,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         super(Main_Window,self).__init__()
         self.weatherform=Ui_MainWindow()
         self.weatherform.setupUi(self)
-        #To arrange background image
+        #To arrange background image for first opening
         self.background_label = QLabel(self)
         self.background_label.setGeometry(0, 0, self.width(), self.height())
         self.set_background("BackgroundImages\cristofer-maximilian-3_gzeydxuhc-unsplash.jpg")
@@ -96,7 +96,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
                 specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
                 self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
 
-                if self.local_time.time() >= specific_time:
+                if self.local_time.time() >= specific_time: #Setting a dynamic background images depending on both local time and description of weather
                     if description == "clear sky":
                         self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
                     elif description == "mist":
@@ -209,7 +209,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             specific_time = datetime.datetime(self.local_time.year, self.local_time.month, self.local_time.day, hour=19, minute=0, second=0).time()
             self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
 
-            if self.local_time.time() >= specific_time:
+            if self.local_time.time() >= specific_time: #Setting a dynamic background images depending on both local time and description of weather
                 if description == "clear sky":
                     self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
                 elif description == "mist":
@@ -338,7 +338,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
             self.weatherform.label.setText(self.local_time.strftime('%H:%M:%S'))
             # print(f"Current time in {self.city_name}: {self.local_time.strftime('%Y-%m-%d %H:%M:%S')}")
         
-            if self.local_time.time() >= specific_time:
+            if self.local_time.time() >= specific_time: #Setting a dynamic background images depending on both local time and description of weather
                 if description == "clear sky":
                     self.set_background('BackgroundImages\walkator-ZzdcWsmKMuU-unsplash.jpg')
                 elif description == "mist":
